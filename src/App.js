@@ -7,11 +7,14 @@ const Heading = styled.h1`
   font-size: 2rem;
 `;
 
+// A Variable in Styled Component
+const color = "white";
+
 const Button = styled.button`
   padding: 5px 10px;
   border-radius: 4px;
   border: none;
-  color: white;
+  color: ${color};
   font-size: 2rem;
   background: ${({ type }) => type === 'cancel' ? 'tomato' : 'indigo'}
 `;
@@ -22,7 +25,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Heading>
-          Edit <code>src/App.js</code> and save to reload.
+          Styled Components
         </Heading>
         <Button>Save</Button>
         <Button type="cancel">Cancel</Button>
