@@ -13,19 +13,20 @@ const color = "white";
 const AppWrapper = styled.div`
   header {
     background: teal;
-    &:hover {
-      background: red;
-    }
   }
 `;
 
 const Button = styled.button`
-  padding: 5px 10px;
+  padding: 5px 20px;
   border-radius: 4px;
   border: none;
   color: ${color};
   font-size: 2rem;
-  background: ${({ type }) => type === 'cancel' ? 'tomato' : 'indigo'}
+  background: indigo;
+`;
+
+const CancelButton = styled(Button)`
+  background: tomato;
 `;
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
           Styled Components
         </Heading>
         <Button>Save</Button>
-        <Button type="cancel">Cancel</Button>
+        <CancelButton>Cancel</CancelButton>
         <a
           className="App-link"
           href="https://reactjs.org"
