@@ -10,6 +10,15 @@ const Heading = styled.h1`
 // A Variable in Styled Component
 const color = "white";
 
+const AppWrapper = styled.div`
+  header {
+    background: teal;
+    &:hover {
+      background: red;
+    }
+  }
+`;
+
 const Button = styled.button`
   padding: 5px 10px;
   border-radius: 4px;
@@ -21,7 +30,7 @@ const Button = styled.button`
 
 function App() {
   return (
-    <div className="App">
+    <AppWrapper>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Heading>
@@ -38,7 +47,7 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </AppWrapper>
   );
 }
 
