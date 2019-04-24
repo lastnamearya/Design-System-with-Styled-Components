@@ -3,18 +3,18 @@ import styled from 'styled-components';
 import logo from './logo.svg';
 import './App.css';
 
+const Fake = ({ className }) => (
+  <div className={className}>
+    <h2>I'm a Fake Component</h2>
+  </div>
+)
+
 const Heading = styled.h1`
   font-size: 2rem;
 `;
 
 // A Variable in Styled Component
 const color = "white";
-
-const AppWrapper = styled.div`
-  header {
-    background: teal;
-  }
-`;
 
 const Button = styled.button`
   padding: 5px 20px;
@@ -29,6 +29,21 @@ const CancelButton = styled(Button)`
   background: tomato;
 `;
 
+const AppWrapper = styled.div`
+  header {
+    background: teal;
+  }
+  ${Button} {
+    margin-bottom: 2rem;
+  }
+`;
+
+const DoubleFake = styled(Fake)`
+  h2 {
+    color: red;
+  }
+`;
+
 function App() {
   return (
     <AppWrapper>
@@ -37,6 +52,8 @@ function App() {
         <Heading>
           Styled Components
         </Heading>
+        <DoubleFake />
+        <Fake />
         <Button>Save</Button>
         <CancelButton>Cancel</CancelButton>
         <a
