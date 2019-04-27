@@ -20,6 +20,17 @@ const above = Object.keys(size).reduce((acc, label) => {
 
 console.log('above', above);
 
+const below = Object.keys(size).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+  @media (max-width: ${size[label]}px) {
+    ${css(...args)}
+  }
+  `;
+  return acc;
+}, {});
+
+console.log('below', below);
+
 // Styled Components behind the scenes use className, so always assign className as props and attributes to reflect the styles with Styled Components.
 const Fake = ({ className }) => (
   <div className={className}>
