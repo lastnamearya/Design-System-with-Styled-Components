@@ -39,11 +39,21 @@ const Fake = ({ className }) => (
 )
 
 // CSS Helpers
+// Needed for props in Mixins
 const fixedTop = css`
   position: fixed;
-  top: 0;
+  top: ${({ top }) => top + "px"};
   left: 0;
 `;
+
+// CSS Helpers
+// How it's different from the above code --> See it's simple string not css tagged template. We can use this for simple css helper mixing when in case no any props in involved
+
+// const fixedTop = `
+//   position: fixed;
+//   top: ${({ top }) => top + "px"};
+//   left: 0;
+// `;
 
 const Heading = styled.h1`
   font-size: 2rem;
@@ -98,7 +108,7 @@ function App() {
         <DoubleFake />
         <Fake />
         <Button>Save</Button>
-        <CancelButton>Cancel</CancelButton>
+        <CancelButton top="100">Cancel</CancelButton>
         <a
           className="App-link"
           href="https://reactjs.org"
