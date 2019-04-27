@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import logo from './logo.svg';
 import './App.css';
 
+// Styled Components behind the scenes use className, so always assign className as props and attributes to reflect the styles with Styled Components.
 const Fake = ({ className }) => (
   <div className={className}>
     <h2>I'm a Fake Component</h2>
@@ -23,6 +24,7 @@ const Button = styled.button`
   color: ${color};
   font-size: 2rem;
   background: indigo;
+  cursor: pointer;
 `;
 
 const CancelButton = styled(Button)`
@@ -33,11 +35,13 @@ const AppWrapper = styled.div`
   header {
     background: teal;
   }
+  /* Variable Referencing in Styled Components */
   ${Button} {
     margin-bottom: 2rem;
   }
 `;
 
+// Referencing and Extendig a Component
 const DoubleFake = styled(Fake)`
   h2 {
     color: red;
