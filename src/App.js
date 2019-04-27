@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import logo from './logo.svg';
-import './App.css';
+import GlobalStyle from './Global';
 
 const size = {
   small: 400,
@@ -118,6 +118,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <GlobalStyle />
     </AppWrapper>
   );
 }
