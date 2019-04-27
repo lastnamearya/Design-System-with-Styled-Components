@@ -38,6 +38,13 @@ const Fake = ({ className }) => (
   </div>
 )
 
+// CSS Helpers
+const fixedTop = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+`;
+
 const Heading = styled.h1`
   font-size: 2rem;
   ${above.med`
@@ -60,6 +67,7 @@ const Button = styled.button`
 
 const CancelButton = styled(Button)`
   background: tomato;
+  ${fixedTop};
 `;
 
 const AppWrapper = styled.div`
