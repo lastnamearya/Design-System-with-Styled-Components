@@ -14,7 +14,8 @@ const Header = ({ className }) => {
 export default styled(Header)`
   background: ${purple};
   padding: 10px 5%;
-  ${fixed({})};
+  ${fixed()};
+  ${'' /* ${fixed({ y: '20px' })} */}
   ${elevation[2]};
   .logo {
     width: 60px;
