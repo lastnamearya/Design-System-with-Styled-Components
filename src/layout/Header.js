@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from '../logo.svg';
-import { social } from '../utilities';
+import { purple, elevation } from '../utilities';
 
 const Header = ({ className }) => {
   return (
@@ -12,9 +12,10 @@ const Header = ({ className }) => {
 };
 
 export default styled(Header)`
-  background: ${social.facebook};
+  background: ${purple};
   padding: 10px 5%;
   .logo {
     width: 60px;
   }
+  ${elevation[2]}
 `;
