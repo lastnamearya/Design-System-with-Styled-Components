@@ -1,10 +1,43 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import logo from './logo.svg';
 import './App.css';
 
+// ***************************************************************** //
+
+// Creating Media Query Breakpoints in Styled-Components using css function
+
+const size = {
+  small: 400,
+  med: 960,
+  large: 1140,
+};
+
+const above = Object.keys(size).reduce((accumulator, currentValue) => {
+  accumulator[currentValue] = (...args) => css`
+    @media (min-width: ${size[currentValue] / 16}em) {
+      ${css(...args)}
+    }
+  `;
+  return accumulator;
+}, {});
+
+const below = Object.keys(size).reduce((accumulator, currentValue) => {
+  accumulator[currentValue] = (...args) => css`
+    @media (max-width: ${size[currentValue] / 16}em) {
+      ${css(...args)}
+    }
+  `;
+  return accumulator;
+}, {});
+
+// ***************************************************************** //
+
 const Heading = styled.h1`
   font-size: 2rem;
+  ${above.med`
+    color: blue
+  `}
 `;
 
 // Variable in Styled Components
