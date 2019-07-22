@@ -28,11 +28,12 @@ const Button = styled.button`
   border: none;
   color: ${color};
   font-size: 2rem;
-  ${'' /* First Way to Style a Button based on props */}
-  ${'' /* ${props => props.type === 'cancel' && 'background: tomato'}; */}
+`;
 
-  ${'' /* Second Way  */}
-  background: ${({ type }) => (type === 'cancel' ? 'tomato' : 'indigo')};
+// Extending a Styled Component ~ CancelButton from Button
+
+const CancelButton = styled(Button)`
+  background: tomato;
 `;
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </Heading>
         <Button>Save</Button>
-        <Button type="cancel">Cancel</Button>
+        <CancelButton>Cancel</CancelButton>
         <Heading>Heading two</Heading>
         <a
           className="App-link"
