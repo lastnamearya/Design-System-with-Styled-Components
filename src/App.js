@@ -71,7 +71,7 @@ const CancelButton = styled(Button)`
   background: tomato;
 
   ${'' /* Using Mixins */}
-  ${fixedTop};
+  ${'' /* ${fixedTop}; */}
 `;
 
 // ***************************************************************** //
