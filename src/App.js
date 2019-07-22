@@ -1,78 +1,8 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import logo from './logo.svg';
 import GlobalStyle from './Global';
-
-// ***************************************************************** //
-
-// Creating Media Query Breakpoints in Styled-Components using css function
-
-const size = {
-  small: 400,
-  med: 960,
-  large: 1140,
-};
-
-const above = Object.keys(size).reduce((accumulator, currentValue) => {
-  accumulator[currentValue] = (...args) => css`
-    @media (min-width: ${size[currentValue] / 16}em) {
-      ${css(...args)}
-    }
-  `;
-  return accumulator;
-}, {});
-
-// const below = Object.keys(size).reduce((accumulator, currentValue) => {
-//   accumulator[currentValue] = (...args) => css`
-//     @media (max-width: ${size[currentValue] / 16}em) {
-//       ${css(...args)}
-//     }
-//   `;
-//   return accumulator;
-// }, {});
-
-// ***************************************************************** //
-
-// CSS Mixins ~ Any piece of reusable code.
-
-const fixedTop = css`
-  position: fixed;
-  top: ${({ top }) => (top ? top : 0)};
-  left: 0;
-`;
-
-// ***************************************************************** //
-
-const Heading = styled.h1`
-  font-size: 2rem;
-  ${above.med`
-    color: blue
-  `}
-`;
-
-// Variable in Styled Components
-
-const color = 'white';
-
-// Styled Component ~ Button
-
-const Button = styled.button`
-  background: indigo;
-  padding: 5px 10px;
-  border-radius: 4px;
-  border: none;
-  color: ${color};
-  font-size: 2rem;
-`;
-
-// Extending a Styled Component ~ CancelButton from Button
-
-const CancelButton = styled(Button)`
-  background: tomato;
-
-  ${'' /* Using Mixins */}
-  ${fixedTop};
-`;
+import { Heading, Button, CancelButton } from './elements';
 
 // ***************************************************************** //
 
