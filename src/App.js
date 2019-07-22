@@ -7,14 +7,18 @@ const Heading = styled.h1`
   font-size: 2rem;
 `;
 
+// Variable in Styled Components
+
+const color = 'white';
+
 const Button = styled.button`
   background: indigo;
   padding: 5px 10px;
   border-radius: 4px;
   border: none;
-  color: white;
+  color: ${color};
   font-size: 2rem;
-  ${'' /* First Way to Style a Button */}
+  ${'' /* First Way to Style a Button based on props */}
   ${'' /* ${props => props.type === 'cancel' && 'background: tomato'}; */}
 
   ${'' /* Second Way  */}
