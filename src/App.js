@@ -22,14 +22,24 @@ const above = Object.keys(size).reduce((accumulator, currentValue) => {
   return accumulator;
 }, {});
 
-const below = Object.keys(size).reduce((accumulator, currentValue) => {
-  accumulator[currentValue] = (...args) => css`
-    @media (max-width: ${size[currentValue] / 16}em) {
-      ${css(...args)}
-    }
-  `;
-  return accumulator;
-}, {});
+// const below = Object.keys(size).reduce((accumulator, currentValue) => {
+//   accumulator[currentValue] = (...args) => css`
+//     @media (max-width: ${size[currentValue] / 16}em) {
+//       ${css(...args)}
+//     }
+//   `;
+//   return accumulator;
+// }, {});
+
+// ***************************************************************** //
+
+// CSS Mixins ~ Any piece of reusable code.
+
+const fixedTop = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+`;
 
 // ***************************************************************** //
 
@@ -59,6 +69,9 @@ const Button = styled.button`
 
 const CancelButton = styled(Button)`
   background: tomato;
+
+  ${'' /* Using Mixins */}
+  ${fixedTop};
 `;
 
 // ***************************************************************** //
