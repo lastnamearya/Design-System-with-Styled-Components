@@ -1,10 +1,9 @@
 import { css } from 'styled-components';
 
-// CSS Helper
-// CSS Mixins ~ Any piece of reusable code.
-
-export const fixedTop = css`
-  position: fixed;
-  top: ${({ top }) => (top ? top : 0)};
-  left: 0;
-`;
+export const fixed = ({ x = 0, y = 0 }) => {
+  return css`
+    position: fixed;
+    top: ${y};
+    left: ${x};
+  `;
+};
