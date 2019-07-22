@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import logo from './logo.svg';
-import './App.css';
+import GlobalStyle from './Global';
 
 // ***************************************************************** //
 
@@ -71,7 +71,7 @@ const CancelButton = styled(Button)`
   background: tomato;
 
   ${'' /* Using Mixins */}
-  ${'' /* ${fixedTop}; */}
+  ${fixedTop};
 `;
 
 // ***************************************************************** //
@@ -112,10 +112,10 @@ const DoubleFake = styled(Fake)`
 
 // ***************************************************************** //
 
-function App() {
+function App({ className }) {
   return (
-    <AppWrapper>
-      <header className="App-header">
+    <AppWrapper className={className}>
+      <header className={`${className} App-header`}>
         <img src={logo} className="App-logo" alt="logo" />
         <Heading>
           Edit <code>src/App.js</code> and save to reload.
@@ -134,6 +134,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <GlobalStyle />
     </AppWrapper>
   );
 }
