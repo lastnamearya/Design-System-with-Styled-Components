@@ -11,6 +11,16 @@ const Heading = styled.h1`
 
 const color = 'white';
 
+// App Wrapper ~ Nesting Example
+
+const AppWrapper = styled.div`
+  header {
+    background: teal;
+  }
+`;
+
+// Styled Component ~ Button
+
 const Button = styled.button`
   background: indigo;
   padding: 5px 10px;
@@ -27,7 +37,7 @@ const Button = styled.button`
 
 function App() {
   return (
-    <div className="App">
+    <AppWrapper>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Heading>
@@ -45,7 +55,7 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </AppWrapper>
   );
 }
 
