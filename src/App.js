@@ -37,7 +37,7 @@ const above = Object.keys(size).reduce((accumulator, currentValue) => {
 
 const fixedTop = css`
   position: fixed;
-  top: 0;
+  top: ${({ top }) => (top ? top : 0)};
   left: 0;
 `;
 
@@ -123,7 +123,7 @@ function App() {
         <DoubleFake />
         <Fake />
         <Button>Save</Button>
-        <CancelButton>Cancel</CancelButton>
+        <CancelButton top="100px">Cancel</CancelButton>
         <Heading>Heading two</Heading>
         <a
           className="App-link"
